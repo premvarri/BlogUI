@@ -1,0 +1,11 @@
+<!-- view-blogs.component.html -->
+<div *ngFor="let blog of blogs; let i = index" class="card mb-3">
+    <div class="card-header bg-transparent" (click)="goToFullBlog(i)">{{ blog.heading }}</div>
+    <div class="card-body">
+        <p class="card-text">{{ blog.content.slice(0, 100) }}...</p>
+    </div>
+    <div class="card-footer bg-transparent">
+        <p>Published on {{ blog.publishedDate }} by {{ blog.author }}</p>
+        <p>Views: {{ blog.views }}</p>
+    </div>
+</div>

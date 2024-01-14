@@ -1,0 +1,137 @@
+<!-- <div class="container mt-4">
+  <ul class="nav nav-tabs" id="myTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="users-tab" (click)="activeTab = 'users'" [class.active]="activeTab === 'users'" role="tab"
+        aria-controls="users" aria-selected="true">Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="friend-list-tab" (click)="activeTab = 'friendList'"
+        [class.active]="activeTab === 'friendList'" role="tab" aria-controls="friendList" aria-selected="false">Friend
+        List</a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-2">
+    <div *ngIf="activeTab === 'users'" class="tab-pane fade show active" role="tabpanel" aria-labelledby="users-tab">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td><button class="btn btn-primary btn-sm" (click)="addFriend(user.id)">Add Friend</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="activeTab === 'friendList'" class="tab-pane fade" role="tabpanel" aria-labelledby="friend-list-tab">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let friend of friendsData">
+            <td>{{ friend.friendId }}</td>
+            <td>{{ friend.friendName }}</td>
+          </tr>
+        </tbody>
+
+      </table>
+      <h1>Additional Content for Friend List Tab</h1>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-4">
+  <ul class="nav nav-tabs" id="myTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="users-tab" (click)="showUsers()" [class.active]="activeTab === 'users'" role="tab"
+        aria-controls="users" aria-selected="true">Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="friend-list-tab" (click)="showFriends()" [class.active]="activeTab === 'friendList'"
+        role="tab" aria-controls="friendList" aria-selected="false">Friend
+        List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="friend-req-tab" (click)="showFrndreq()" [class.active]="activeTab === 'frndReq'"
+        role="tab" aria-controls="frndReq" aria-selected="false">Friend
+        Requests</a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-2">
+    <div *ngIf="activeTab === 'users'" class="tab-pane fade show active" role="tabpanel" aria-labelledby="users-tab">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td><button class="btn btn-primary btn-sm" (click)="addFriend(user.id)">Add Friend</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  <div class="tab-content mt-2">
+    <div *ngIf="activeTab === 'friendList'" class="tab-pane fade  show active" role="tabpanel">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let friend of friendList">
+            <td>{{ friend.id }}</td>
+            <td>{{ friend.name }}</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+  <div class="tab-content mt-2">
+    <div *ngIf="activeTab === 'frndReq'" class="tab-pane fade  show active" role="tabpanel">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let friend of friendList">
+            <td>{{ friend.name }}</td>
+            <td><button class="btn btn-primary btn-sm" (click)="addFriend(friend.id)">Accept</button></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<header>
+  <div class="container" *ngIf="showTopBar">
+    <div class="row">
+      <div class="col-md-2 col-sm-2 col-2">
+        <div class="logo">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/128/2964/2964063.png" style="height: 50px;" /> -->
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-9 col-9 text-end">
+        <div class="menu">
+          <ul>
+            <li (click)="navigateToHome()">Home</li>
+            <!-- <li (click)="navigateToNews()">News</li>  -->
+            <li (click)="navigateToBlogs()">Blogs</li>
+            <li (click)="navigateToList()">FriendsList</li>
+            <li (click)="navigateToProfile()">Profile</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>

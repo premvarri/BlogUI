@@ -1,0 +1,11 @@
+<!-- full-blog-view.component.html -->
+<div *ngIf="blog" class="card">
+    <div class="card-header bg-transparent">{{ blog.heading }}</div>
+    <div class="card-body">
+        <p class="card-text">{{ blog.content }}</p>
+    </div>
+    <div class="card-footer bg-transparent">
+        <p>Published on {{ blog.publishedDate }} by {{ blog.author }}</p>
+        <p>Views: {{ blog.views }}</p>
+    </div>
+</div>
